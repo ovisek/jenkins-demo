@@ -19,9 +19,6 @@ pipeline {
         }
     }
 	post {
-		success {
-			
-		}
 		always {
 			echo "All phases are complete now"
 		}
