@@ -1,19 +1,11 @@
 pipeline {
     stages {
-		agent {
-				docker {
-                    image 'ubuntu'
-              }
-        }
         stage('build') {
-            
             steps{
                 echo "child job : building phase"
-                sh "uname -a"
             }
         }
         stage('test') {
-            
             steps{
                 echo "child job : testing phase"
             }
