@@ -1,21 +1,21 @@
 pipeline {
     stages {
-	    agent {
+		agent {
 				docker {
-					image 'ubuntu'
-				}
+                    image 'ubuntu'
+              }
         }
         stage('build') {
- 
+            
             steps{
-                echo "building phase"
+                echo "child job : building phase"
                 sh "uname -a"
             }
         }
         stage('test') {
             
             steps{
-                echo "testing phase"
+                echo "child job : testing phase"
             }
         }
         stage('deploy') {
@@ -25,11 +25,8 @@ pipeline {
         }
     }
 	post {
-		success {
-			
-		}
 		always {
-			echo "All phases are complete now"
+			echo "child job completed"
 		}
 	}
 }
