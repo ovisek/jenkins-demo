@@ -4,7 +4,7 @@ pipeline {
 		stage ('build') {
             		steps {
                 		echo "building phase"
-				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sf-sys-jenkins-account credential store', usernameVariable: 'JENKINS_USERNAME', passwordVariable: 'JENKINS_PASSWORD']])
+				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'sf-sys-jenkins-account', usernameVariable: 'JENKINS_USERNAME', passwordVariable: 'JENKINS_PASSWORD']])
 				{
 					echo "${JENKINS_USERNAME}"
 					echo "${JENKINS_PASSWORD}"
